@@ -41,12 +41,18 @@ def open_csv_pop_dct():
 
     dct = {}
 
-    with open("dates_tasks.csv", newline='') as csvfile:
+    with open("dates_tasks.csv", newline="") as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
             dct[row["date"]] = row["task_start_of_day"]
 
     return dct
+
+
+def output_dct(dct):
+    """Output contents of dictionary."""
+    for date, task in dct.items():
+        print(date, task)
 
 
 def prompt_user_for_target_date(user_prompt):
@@ -62,7 +68,7 @@ def prompt_user_for_task(user_prompt):
 def write_dct_to_csv(file, dct):
     """Write dictionary to csv."""
 
-    with open(file, 'w') as out_file:
+    with open(file, "w") as out_file:
         out_csv = csv.writer(out_file)
         out_csv.writerow(["date", "task_start_of_day"])
         for today, task in dct.items():
