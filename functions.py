@@ -2,6 +2,7 @@
 
 import csv
 import datetime
+from datetime import datetime
 from datetime import (date,
                       timedelta)
 import pyinputplus as pyip
@@ -32,8 +33,15 @@ def get_target_date():
 
 
 def greeting():
-    """Greet user."""
-    print("\nGood morning!")
+    """Greet user based on time of day."""
+    if datetime.now().hour >= 1 and datetime.now().hour < 6:
+        print("\nYou're up late.")
+    elif datetime.now().hour >= 6 and datetime.now().hour < 12:
+        print("\nGood morning!")
+    elif datetime.now().hour >= 12 and datetime.now().hour < 17:
+        print("\nGood afternoon!")
+    else:
+        print("\nGood evening!")
 
 
 def open_csv_pop_dct():
