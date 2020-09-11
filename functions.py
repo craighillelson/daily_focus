@@ -59,6 +59,7 @@ def open_csv_pop_dct():
 
 def output_dct(dct):
     """Output contents of dictionary."""
+    print("\ndate, focus")
     for date, task in dct.items():
         print(date, task)
 
