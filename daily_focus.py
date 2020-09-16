@@ -16,6 +16,7 @@ greeting()
 print("\ntarget date:", target_date)
 print(f"90 days out: {days_out(90)}")
 print(f"180 days out: {days_out(180)}")
+print(f"270 days out: {days_out(270)}")
 to_do_today = prompt_user_for_task("What would you like to work on today?\n> ")
 if dates_tasks_from_file:
     date_tasks_to_add[todays_date] = to_do_today
